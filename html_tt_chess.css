@@ -3,13 +3,12 @@
  *
  * Copyright (C) 2007-2016  Michael Peeters <https://github.com/xeyownt>
  *
- * LICENSE:
- * =======
- * This file is part of the HTMLTTChess package.
+ * This file is part of the HTMLTTChess package 
+ * <https://github.com/xeyownt/htmlttchess>.
  *
- * HTMLTTChess is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License as published
- * by the Free Software Foundation; either version 3 of the License, or
+ * HTMLTTChess is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
  * HTMLTTChess is distributed in the hope that it will be useful,
@@ -17,28 +16,27 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * LINKS:
- * =====
- * Check page http://mip.noekeon.org/HTMLTTChess/ for updates.
- * See file index.html for contact information.
+ *==============================================================================
+ */
+
+/*==============================================================================
  *
- * REMARKS:
- * =======
- * - This stylesheet is split in 2 parts:
- *    - Base stylesheet
- *      This is the base style needed to layout the chessboards correctly. You
- *      should not edit these styles
- *    - Custom stylesheet
- *      This is the styles defining the size & color of the chessboards. You
- *      can edit them to customize the rendering of chessboards.
+ * This stylesheet is split in 2 parts:
+ *  - Base stylesheet
+ *    This is the base style needed to layout the chessboards correctly. You
+ *    should not edit these styles.
+ *  - Custom stylesheet
+ *    This is the styles defining the size & color of the chessboards. You
+ *    can edit them to customize the rendering of chessboards.
  *
- * - Changing board font size:
- *   - In Firefox, specifying font size in px works better. Blank pixel lines
- *     sometimes appear in B&W mode if size is specified in pt.
- *     Opera / IE doesn't seem to have such problem.
+ * Changing board font size:
+ *  - In Firefox, specifying font size in px works better. Blank pixel lines
+ *    sometimes appear in B&W mode if size is specified in pt.
+ *    Opera / IE doesn't seem to have such problem.
  *
  *==============================================================================
  */
@@ -49,7 +47,8 @@
 /* BASE STYLESHEET                                                            */
 /* ---------------                                                            */
 /*                                                                            */
-/* You should not edit these styles                                           */
+/* You should not edit the styles in this section.                            */
+/*                                                                            */
 /*                                                                            */
 /* ========================================================================== */
 
@@ -152,7 +151,7 @@ table.chess div.pcfg {
 /* CUSTOM STYLESHEET                                                          */
 /* -----------------                                                          */
 /*                                                                            */
-/* You can edit these styles to change appearance of the chess boards         */
+/* You can edit these styles to change appearance of the chess boards.        */
 /*                                                                            */
 /*                                                                            */
 /* ========================================================================== */
