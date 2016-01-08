@@ -1,0 +1,230 @@
+/*==============================================================================
+ * Cascading style sheet for the HTMLTTChess package
+ *
+ * Copyright (C) 2007  Michael Peeters
+ *
+ * LICENSE:
+ * =======
+ * This file is part of the HTMLTTChess package.
+ *
+ * HTMLTTChess is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as published
+ * by the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * HTMLTTChess is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * LINKS:
+ * =====
+ * Check page http://mip.noekeon.org/HTMLTTChess/ for updates
+ * See file index.html for contact information
+ *
+ * HISTORY:
+ * =======
+ * - Aug 13 2007 - v1.0
+ *
+ *   First version.
+ *
+ * REMARKS:
+ * =======
+ * - This stylesheet is split in 2 parts:
+ *    - Base stylesheet
+ *      This is the base style needed to layout the chessboards correctly. You
+ *      should not edit these styles
+ *    - Custom stylesheet
+ *      This is the styles defining the size & color of the chessboards. You
+ *      can edit them to customize the rendering of chessboards.
+ *
+ * - Changing board font size:
+ *   - In Firefox, specifying font size in px works better. Blank pixel lines
+ *     sometimes appear in B&W mode if size is specified in pt.
+ *     Opera / IE doesn't seem to have such problem.
+ *
+ *==============================================================================
+ */
+
+/* ========================================================================== */
+/*                                                                            */
+/*                                                                            */
+/* BASE STYLESHEET                                                            */
+/* ---------------                                                            */
+/*                                                                            */
+/* You should not edit these styles                                           */
+/*                                                                            */
+/* ========================================================================== */
+
+/* ---------------------------------------------------------------------------*/
+/*  Inherited properties that we explicitly cancel:                           */
+/*      border-collapse             font-weight         text-indent           */
+/*      border-spacing              font-size           text-transform        */
+/*      color                       line-height         white-space           */
+/*      font                        font-family         word-spacing          */
+/*          font-style          letter-spacing                                */
+/*          font-variant        text-align                                    */
+/*                                                                            */
+/*  Inherited properties that we ignore:                                      */
+/*      azimuth                 list-style              page-break-inside     */
+/*      caption-side            list-style-image        quotes                */
+/*      cursor                  list-style-position     speak                 */
+/*      direction               list-style-type         speak-header          */
+/*      empty-cells             orphans                 volume                */
+/*      font-size-adjust        page                    widows                */
+/* ---------------------------------------------------------------------------*/
+
+/* ----- BASE Styles for all modes ------------------------------------------ */
+
+table.bwchess, table.chess {
+    font-style: normal                  !important;
+    font-variant: normal                !important;
+    font-weight: normal                 !important;
+    font-size: 1em;
+    line-height: 1em                    !important;
+    font-family: "Chess Merida Unicode" !important;
+    border: none                        !important;
+    border-collapse: collapse           !important;
+    border-spacing: 0px 0px             !important;
+    color: black;
+    letter-spacing: normal              !important;
+    text-align: left                    !important;
+    text-indent: 0                      !important;
+    text-transform: none                !important;
+    white-space: normal                 !important;
+    word-spacing: normal                !important;
+    padding: 0px                        !important;
+    margin: 0px                         !important;
+}
+
+table.bwchess td, table.chess td {
+    border: none                        !important;
+    padding: 0px                        !important;
+    margin: 0px                         !important;
+}
+
+/* ----- BASE Styles for B&W mode ------------------------------------------- */
+
+table.bwchess div.nowrap {
+    /* 1px height div to prevent IE to wrap */
+    height:1px;
+    overflow:hidden;
+}
+
+/* ----- BASE Styles for COLOR mode ----------------------------------------- */
+
+table.chess td {
+    width: 1em;
+}
+
+table.chess div.board {
+    float: left;
+    position: relative;
+}
+
+table.chess div.sq {
+    position: absolute;
+    left:0px;
+    top:0px;
+    z-index: 0;                 /* FF: Doesn't support negative z-index */
+}
+
+table.chess div.pcbg {
+    position: absolute;
+    left:0px;
+    top:0px;
+    z-index: 1;
+}
+
+table.chess div.pcfg {
+    position: relative;         /* z-index only works on elements that have been
+                                    positioned! */
+    left:0px;
+    top:0px;
+    z-index: 2;
+}
+
+/* ========================================================================== */
+/*                                                                            */
+/*                                                                            */
+/* CUSTOM STYLESHEET                                                          */
+/* -----------------                                                          */
+/*                                                                            */
+/* You can edit these styles to change appearance of the chess boards         */
+/*                                                                            */
+/*                                                                            */
+/* ========================================================================== */
+
+/* ----- CUSTOM Styles for B&W mode ----------------------------------------- */
+
+table.bwchess {
+    /* Font size - px size works better than pt size in FF */
+    font-size: 1.5em;
+
+    /* Background color */
+    background-color: white;
+
+    /* Foreground color */
+    color: black;
+}
+
+table.bwchess span.bwhl {
+    /* highlighted square background color */
+    background-color: #FF0;
+}
+
+/* ----- CUSTOM Styles for COLOR mode --------------------------------------- */
+
+table.chess {
+    /* Font size - px size works better than pt size in FF */
+    font-size:1.5em;
+
+    /* Columns / Rows coordinates background color */
+    background-color: white;
+
+    /* Columns / Rows coordinates foreground color */
+    color: black;
+}
+
+table.chess td.board {
+    /* Border style in color output (eg. "double 3px black !important;") */
+    /* !!! !important mandatory to override any settings from parent table */
+    /* !!! DON'T FORGET TO ALSO change padding-left in td.cols */
+    border: double 3px black !important;
+}
+
+table.chess td.cols {
+    /* text-align: center !important; doesn't work in IE - use padding-left */
+    /* Set padding-left to 1/2 border width in td.board*/
+    padding-left: 1px;
+}
+
+table.chess div.sq {
+    /* Light square color (eg. #FFCE9E) */
+    background-color: #FFCE9E;
+
+    /* Dark square color (eg. #D18B47) */
+    color: #D18B47;
+}
+
+table.chess span.hl {
+    /* highlighted light square (eg. 60% green highlighting = #99E15E) */
+    background-color: #99E15E;
+
+    /* highlighted dark square (eg. 60% green highlighting = #7DB92A) */
+    color: #7DB92A;
+}
+
+table.chess div.pcbg {
+    /* Pieces background color (eg. "white") */
+    color: white;
+}
+
+table.chess div.pcfg {
+    /* Pieces foreground color (eg. "black") */
+    color: black;
+}
+

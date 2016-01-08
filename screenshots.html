@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//MIP//DTD XHTML 1.0 Transitional Chess//EN"
+"http://mip.noekeon.org/HTMLTTChess/xhtml1-transitional-chess.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://mip.noekeon.org/HTMLTTChess" lang="en">
+
+<!--
+ *******************************************************************************
+ *
+ * Main documentation page of the HTMLTTChess package
+ *
+ * Copyright (C) 2007  Michael Peeters
+ *
+ * LICENSE:
+ * =======
+ * This file is part of the HTMLTTChess package.
+ *
+ * HTMLTTChess is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as published
+ * by the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * HTMLTTChess is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * LINKS:
+ * =====
+ * Check page http://mip.noekeon.org/HTMLTTChess/ for updates
+ * See file index.html for contact information
+ *
+ * HISTORY:
+ * =======
+ * - Aug 13 2007 - v1.0
+ *
+ *   First version.
+ *
+ *******************************************************************************
+-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Screenshots of HTMLTTChess in action</title>
+	<script type="text/javascript" src="antispam/js-hic3.js"></script>
+	<script type="text/javascript" src="html_tt_chess.js"></script>
+	<link rel="stylesheet" type="text/css" href="html_tt_chess.css" />
+	<link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body onload="parseChess()">
+
+<c:chess mode="color"></c:chess>
+
+<!-- Font detector script - part I - must be a direct child of <body> to work -->
+<script type="text/javascript" src="detect_chess_merida.js"></script>
+
+<div id="leftpane">
+<h2>Content</h2>
+<ul>
+<li><a href="index.html">Main page</a></li>
+<li><a href="install.html">Installation</a></li>
+<li><a href="chess_merida_unicode.html">Chess Merida Unicode</a></li>
+<li><a href="reference.html">Reference</a></li>
+<li><a href="screenshots.html">Some screenshots</a></li>
+<li><a href="sample_page.html">Sample page</a></li>
+<li><a href="template.html">Template page</a></li>
+</ul>
+<!-- Font detector script - part II - Put this part where you like the "DETECTED" message to appear on your page -->
+<script type="text/javascript"><!--
+	if(ChessMeridaDetected) document.write('<p><small style="color:gray">The Chess Merida Unicode font has been detected on your computer. You should see this page properly (if not, see installation instructions <a href="install.html">here</a>).</small></p>')
+// --></script>
+</div> <!-- leftpane -->
+
+<div id="content">
+
+<!-- =========================================================================================================================== -->
+<h1>Screenshots of HTMLTTChess in action</h1>
+<!-- =========================================================================================================================== -->
+
+<!-- Font detector script - part III - Put this part where you like the "UNDETECTED" message to appear on your page -->
+<noscript><p style="text-align:center; font-size:1.2em"><em>You need to activate javascript to view this page properly!</em></p></noscript>
+<script type="text/javascript"><!--
+if(!ChessMeridaDetected) document.write('<p style="text-align:center; font-size:1.2em"><em>!!! Prior viewing this page, you must first install the Chess Merida Unicode font that comes with this package. See installation instructions <a href="install.html">here</a>.</em></p>');
+// --></script>
+
+<!-- =========================================================================================================================== -->
+<h2>Platforms Comparison</h2>
+<!-- =========================================================================================================================== -->
+
+<p>The table below gives screenshots obtained for the same set of tables on different platforms. The first column is the actual
+rendering on your platform.</p>
+
+<table class="table1" style="text-align:center">
+<tr>
+	<th>Your platform</th>
+	<th>Linux<br />with Font AA</th>
+	<th>Windows XP<br />with ClearType</th>
+	<th>Windows 2K</th>
+</tr>
+<tr>
+	<td>
+		<table align="center"><tr><td><c:chess mode="color" border="a1" cstyle="font: 24px/1em Chess Merida Unicode;">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess></td></tr></table>
+	</td>
+	<td><img align="middle" src="screenshots/linux1.png" alt="Linux - screenshot 1" width="246" height="246" border="0" /></td>
+	<td><img align="middle" src="screenshots/xp1.png" alt="Windows XP - screenshot 1" width="246" height="246" border="0" /></td>
+	<td><img align="middle" src="screenshots/w2k1.png" alt="Windows 2K - screenshot 1" width="246" height="246" border="0" /></td>
+</tr>
+<tr>
+	<td>
+		<table align="center"><tr><td><c:chess mode="color" border="double e5" cstyle="font: 48px/1em Chess Merida Unicode;">...k/.N../.NK./....</c:chess></td></tr></table>
+	</td>
+	<td><img align="middle" src="screenshots/linux2.png" alt="Linux - screenshot 2" width="243" height="243" border="0" /></td>
+	<td><img align="middle" src="screenshots/xp2.png" alt="Windows XP - screenshot 2" width="243" height="243" border="0" /></td>
+	<td><img align="middle" src="screenshots/w2k2.png" alt="Windows 2K - screenshot 2" width="243" height="243" border="0" /></td>
+</tr>
+<tr>
+	<td>
+		<table class="table1">
+		<tr>
+			<td rowspan="2">
+				<table align="center"><tr><td><c:chess mode="color" border="double ns" cstyle="font: 24px/1em Chess Merida Unicode;">(xkx)./(xxx)N/.K../..../..../..../..../R.R.</c:chess></td></tr></table>
+			</td>
+			<td>
+				<c:chess mode="color" border="double e5" cstyle="font: 24px/1em Chess Merida Unicode;">(+).../(R+++)/(+).../(+)...</c:chess>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<c:chess mode="color" border="solid e1" cstyle="font: 24px/1em Chess Merida Unicode;">..../.NK./.N../...k</c:chess>
+			</td>
+		</tr>
+		</table>
+	</td>
+	<td><img align="middle" src="screenshots/linux3.png" alt="Linux - screenshot 3" width="226" height="256" border="0" /></td>
+	<td><img align="middle" src="screenshots/xp3.png" alt="Windows XP - screenshot 3" width="226" height="251" border="0" /></td>
+	<td><img align="middle" src="screenshots/w2k3.png" alt="Windows 2K - screenshot 3" width="226" height="251" border="0" /></td>
+</tr>
+<tr>
+	<td>
+		<table align="center"><tr><td><c:chess mode="bw" border="a1" cstyle="font: 24px/1em Chess Merida Unicode;">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess></td></tr></table>
+	</td>
+	<td><img align="middle" src="screenshots/linux4.png" alt="Linux - screenshot 4" width="240" height="240" border="0" /></td>
+	<td><img align="middle" src="screenshots/xp4.png" alt="Windows XP - screenshot 4" width="240" height="240" border="0" /></td>
+	<td><img align="middle" src="screenshots/w2k4.png" alt="Windows 2K - screenshot 4" width="240" height="240" border="0" /></td>
+</tr>
+<tr>
+	<td>
+		<table align="center"><tr><td><c:chess mode="bw" border="double e5" cstyle="font: 48px/1em Chess Merida Unicode;">...k/.N../.NK./....</c:chess></td></tr></table>
+	</td>
+	<td><img align="middle" src="screenshots/linux5.png" alt="Linux - screenshot 5" width="240" height="240" border="0" /></td>
+	<td><img align="middle" src="screenshots/xp5.png" alt="Windows XP - screenshot 5" width="240" height="240" border="0" /></td>
+	<td><img align="middle" src="screenshots/w2k5.png" alt="Windows 2K - screenshot 5" width="240" height="240" border="0" /></td>
+</tr>
+<tr>
+	<td>
+		<table class="table1">
+		<tr>
+			<td rowspan="2">
+				<table align="center"><tr><td><c:chess mode="bw" border="double ns" cstyle="font: 24px/1em Chess Merida Unicode;">(xkx)./(xxx)N/.K../..../..../..../..../R.R.</c:chess></td></tr></table>
+			</td>
+			<td>
+				<c:chess mode="bw" border="double e5" cstyle="font: 24px/1em Chess Merida Unicode;">(+).../(R+++)/(+).../(+)...</c:chess>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<c:chess mode="bw" border="solid e1" cstyle="font: 24px/1em Chess Merida Unicode;">..../.NK./.N../...k</c:chess>
+			</td>
+		</tr>
+		</table>
+	</td>
+	<td><img align="middle" src="screenshots/linux6.png" alt="Linux - screenshot 6" width="223" height="246" border="0" /></td>
+	<td><img align="middle" src="screenshots/xp6.png" alt="Windows XP - screenshot 6" width="223" height="245" border="0" /></td>
+	<td><img align="middle" src="screenshots/w2k6.png" alt="Windows 2K - screenshot 6" width="223" height="245" border="0" /></td>
+</tr>
+</table>
+
+<!-- =========================================================================================================================== -->
+<h2>Your platform</h2>
+<!-- =========================================================================================================================== -->
+
+<p>Here the same boards as above as rendered by your platform, in color mode.</p>
+
+<table class="table1">
+<tr>
+	<td rowspan="2">
+		<table align="center"><tr><td><c:chess mode="color" border="a1" cstyle="font: 24px/1em Chess Merida Unicode;">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess></td></tr></table>
+	</td>
+	<td rowspan="2">
+		<table align="center"><tr><td><c:chess mode="color" border="double e5" cstyle="font: 48px/1em Chess Merida Unicode;">...k/.N../.NK./....</c:chess></td></tr></table>
+	</td>
+	<td rowspan="2">
+		<table align="center"><tr><td><c:chess mode="color" border="double ns" cstyle="font: 24px/1em Chess Merida Unicode;">(xkx)./(xxx)N/.K../..../..../..../..../R.R.</c:chess></td></tr></table>
+	</td>
+	<td>
+		<c:chess mode="color" border="double e5" cstyle="font: 24px/1em Chess Merida Unicode;">(+).../(R+++)/(+).../(+)...</c:chess>
+	</td>
+</tr>
+<tr>
+	<td width="25%">
+		<c:chess mode="color" border="solid e1" cstyle="font: 24px/1em Chess Merida Unicode;">..../.NK./.N../...k</c:chess>
+	</td>
+</tr>
+</table>
+
+<p>Here the same boards as above as rendered by your platform, in B&amp;W mode.</p>
+
+<table class="table1">
+<tr>
+	<td rowspan="2">
+		<table align="center"><tr><td><c:chess mode="bw" border="a1" cstyle="font: 24px/1em Chess Merida Unicode;">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess></td></tr></table>
+	</td>
+	<td rowspan="2">
+		<table align="center"><tr><td><c:chess mode="bw" border="double e5" cstyle="font: 48px/1em Chess Merida Unicode;">...k/.N../.NK./....</c:chess></td></tr></table>
+	</td>
+	<td rowspan="2">
+		<table align="center"><tr><td><c:chess mode="bw" border="double ns" cstyle="font: 24px/1em Chess Merida Unicode;">(xkx)./(xxx)N/.K../..../..../..../..../R.R.</c:chess></td></tr></table>
+	</td>
+	<td>
+		<c:chess mode="bw" border="double e5" cstyle="font: 24px/1em Chess Merida Unicode;">(+).../(R+++)/(+).../(+)...</c:chess>
+	</td>
+</tr>
+<tr>
+	<td width="25%">
+		<c:chess mode="bw" border="solid e1" cstyle="font: 24px/1em Chess Merida Unicode;">..../.NK./.N../...k</c:chess>
+	</td>
+</tr>
+</table>
+
+</div>	<!-- content -->
+
+<div id="footnote">
+
+<div style="float: left;">
+	<p><small>&copy; Copyright 2007 <script type="text/javascript">mailto("Michaël Peeters")</script> (<a href="http://mip.noekeon.org">http://mip.noekeon.org</a>).
+	</small></p>
+</div>
+<div>
+	<p style="float: right; text-align: right;"><small>
+	Last modified on <script type="text/javascript">document.write(document.lastModified)</script><br/>
+	</small></p>
+</div>
+<div style="clear:left; padding-top: 1ex;">
+	<a href="http://www.syronex.com/antispam/" target="_blank"><img align="middle" style="border:0pt" title="Antispam Solutions" alt="Anti-Spam" src="antispam/antispam.gif" width="117" height="23"/></a>
+</div>
+
+</div>	<!-- footnote -->
+</body>
+
+
+</html>
+

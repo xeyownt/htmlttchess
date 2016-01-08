@@ -1,2 +1,0 @@
-# htmlttchess
-The HTMLTTChess package is a combination of a javascript, a css and an html file that allows the rendering of nice chessboards in HTML at any size or color, by using TrueType fonts and without the need of extra images. Chessboards can be rendered in both color or B&amp;W mode, and figurine movements or square of interests can be indicated as well. Chessboards rendered in B&amp;W mode can also be copy-pasted into e.g. an office application.

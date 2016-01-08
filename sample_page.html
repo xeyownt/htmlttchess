@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//MIP//DTD XHTML 1.0 Transitional Chess//EN"
+"http://mip.noekeon.org/HTMLTTChess/xhtml1-transitional-chess.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://mip.noekeon.org/HTMLTTChess">
+
+<!--
+ *******************************************************************************
+ *
+ * Documentation sample page of the HTMLTTChess package
+ *
+ * Copyright (C) 2007  Michael Peeters
+ *
+ * LICENSE:
+ * =======
+ * This file is part of the HTMLTTChess package.
+ *
+ * HTMLTTChess is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as published
+ * by the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * HTMLTTChess is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * LINKS:
+ * =====
+ * Check page http://mip.noekeon.org/HTMLTTChess/ for updates
+ * See file index.html for contact information
+ *
+ * HISTORY:
+ * =======
+ * - Aug 13 2007 - v1.0
+ *
+ *   First version.
+ *
+ *******************************************************************************
+-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>HTMLTTChess Sample Page</title>
+	<script type="text/javascript" src="antispam/js-hic3.js"></script>
+    <script type="text/javascript" src="html_tt_chess.js"></script>
+    <link rel="stylesheet" type="text/css" href="html_tt_chess.css"/>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <style type="text/css">
+        /* Custom style chess1 */
+        table.chess1 {
+            font-size:36px;
+            background-color: #EEE;
+            color: #888;
+        }
+        /* Custom style chess2 */
+        /* !!! Don't forget to specify the styles for both BW and color mode !!! */
+        table.chess2 {
+            /* This define the common style for both BW and color mode */
+            font-size:48px;
+            background-color: white;
+            color: #840;
+        }
+        table.chess2 span.bwhl {
+            /* BW mode only */
+            background-color: #CCC;
+        }
+        table.chess2 td.board {
+            /* Color mode only */
+            border: double 5px #840 !important;
+        }
+        table.chess2 div.sq {
+            /* Color mode only */
+            background-color: #DDD;
+            color: #444;
+        }
+        table.chess2 span.hl {
+            /* Color mode only */
+            background-color: #6E6EEE;
+            color: #2222A1;
+        }
+        table.chess2 div.pcbg {
+            /* Color mode only */
+            color: white;
+        }
+        table.chess2 div.pcfg {
+            /* Color mode only */
+            color: #840;
+        }
+        /* Custom style parent1 */
+        /* Here a simple example on how to apply a different board style based
+           on the class of the containing parent */
+        table.parent1 {
+            padding: 1px;
+            margin: 0px;
+            border: solid 1px #AAA;
+        }
+        td.parent1 {
+            padding: 0px;
+            margin: 0px;
+            border: solid 1px #AAA;
+        }
+        table.parent1 td.board {
+            border: solid 1px #AAA! important;
+        }
+        /* Custom style parent2 */
+        /* Here a more complex example on how to apply a different board style
+           based on the class of the containing parent */
+        table.parent2 {
+            padding: 0px;
+            margin: 0px;
+            border: double 3px #AAA;
+            background-color: #FFEBD7;
+        }
+        table.parent2 td {
+            padding: 15px;
+            margin: 0px;
+            border: none;
+        }
+        table.parent2 table.chess {
+            background-color: #FFEBD7;
+            color: #7C4E1F;
+        }
+        table.parent2 table.bwchess {
+            background-color: #FFEBD7;
+            color: black;
+        }
+        table.parent2 table.chess div.pcfg {
+            color: #7C4E1F;
+        }
+        table.parent2 table.chess td.board {
+            border: solid 3px #7C4E1F! important;
+        }
+    </style>
+    <script type="text/javascript"><!--
+        function switchMode()
+        {
+            currentMode = document.getElementById('switchmode').getAttribute("mode") == "color" ? "bw" : "color";
+            document.getElementById('switchmode').setAttribute("mode",currentMode);
+            document.getElementById('resumemode').setAttribute("mode",currentMode);
+            parseChess();
+        }
+    // --></script>
+</head>
+
+<body onload="switchMode()">
+
+<c:chess id="switchmode" mode="bw"></c:chess>
+
+<!-- Font detector script - part I - must be a direct child of <body> to work -->
+<script type="text/javascript" src="detect_chess_merida.js"></script>
+
+<div id="leftpane">
+<h2>Content</h2>
+<ul>
+<li><a href="index.html">Main page</a></li>
+<li><a href="install.html">Installation</a></li>
+<li><a href="chess_merida_unicode.html">Chess Merida Unicode</a></li>
+<li><a href="reference.html">Reference</a></li>
+<li><a href="screenshots.html">Some screenshots</a></li>
+<li><a href="sample_page.html">Sample page</a></li>
+<li><a href="template.html">Template page</a></li>
+</ul>
+<!-- Font detector script - part II - Put this part where you like the "DETECTED" message to appear on your page -->
+<script type="text/javascript"><!--
+    if(ChessMeridaDetected) document.write('<p><small style="color:gray">The Chess Merida Unicode font has been detected on your computer. You should see this page properly (if not, see installation instructions <a href="install.html">here</a>).</small></p>')
+// --></script>
+</div> <!-- leftpane -->
+
+<div id="content">
+
+<!-- =========================================================================================================================== -->
+<h1>HTMLTTChess Sample Page</h1>
+<!-- =========================================================================================================================== -->
+
+<!-- Font detector script - part III - Put this part where you like the "UNDETECTED" message to appear on your page -->
+<noscript><p style="text-align:center; font-size:1.2em"><em>You need to activate javascript to view this page properly!</em></p></noscript>
+<script type="text/javascript"><!--
+if(!ChessMeridaDetected) document.write('<p style="text-align:center; font-size:1.2em"><em>!!! Prior viewing this page, you must first install the Chess Merida Unicode font that comes with this package. See installation instructions <a href="install.html">here</a>.</em></p>');
+// --></script>
+
+<!-- =========================================================================================================================== -->
+<h2>Change default mode for this page</h2>
+<!-- =========================================================================================================================== -->
+
+<table>
+<tr>
+    <td><input type="button" onclick="switchMode()" value="Switch Mode"></input>
+    </td>
+    <td><p>Click this button to change the default mode (color / B&amp;W) for this page. </p>
+    </td>
+</tr>
+</table>
+
+
+<!-- =========================================================================================================================== -->
+<h2>Basics</h2>
+<!-- =========================================================================================================================== -->
+
+<table class="table1">
+<tr>
+    <td width="300px"><c:chess border="a1">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess>
+    </td>
+    <td><em>Default border style</em> - Default border style is solid with round corner (BW only).
+    </td>
+</tr>
+<tr>
+    <td><c:chess border="ne">B.../R.xx/..xk/..+x</c:chess>
+    </td>
+    <td><em>Extra symbols</em> - Use '<code class="kw">+</code>' and '<code class="kw">x</code>' in the FEN notation to indicate some
+        squares of interests on the board.
+    </td>
+</tr>
+<tr>
+    <td><c:chess border="ne">(B).../(R.xx)/..(x)k/..+(x)</c:chess>
+    </td>
+    <td><em>Highlighting</em> - Surround squares with brackets <code class="kw">(</code> ... <code class="kw">)</code> to have them
+        highlighted in a different color.
+    </td>
+</tr>
+<tr>
+    <td><c:chess border="ne">
+        +.../
+        R+++/
+        +.../
+        +...
+    </c:chess>
+    </td>
+    <td><em>Blanks</em> - HTML may also includes blanks (space/tabs/newlines) for better clarity.
+    </td>
+</tr>
+</table>
+
+<!-- =========================================================================================================================== -->
+<h2><code class="kw">border</code> attribute</h2>
+<!-- =========================================================================================================================== -->
+
+<!-- =========================================================================================================================== -->
+<h3>No attributes</h3>
+<!-- =========================================================================================================================== -->
+
+<p>This is the default rendering if no attribute is specified in the <code class="kw">c:chess</code> tag</p>
+
+<table class="table1">
+<tr>
+    <td><c:chess>rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess>
+    </td>
+</tr>
+</table>
+
+<!-- =========================================================================================================================== -->
+<h3>border = <code class="kw">solid</code></h3>
+<!-- =========================================================================================================================== -->
+
+<p>(B&amp;W mode) Show a solid border around the chessboard. If not specified, default corner style is round.</p>
+<p>(Color mode) Show a border according to the stylesheet.</p>
+
+<table class="table1">
+<tr>
+    <td><c:chess border="solid">RNBQKBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbqkbnr</c:chess>
+    </td>
+</tr>
+</table>
+
+<!-- =========================================================================================================================== -->
+<h3>border = <code class="kw">double</code></h3>
+<!-- =========================================================================================================================== -->
+
+<p>(B&amp;W mode) Show a double border around the chessboard. If not specified, default corner style is round.</p>
+<p>(Color mode) Show a border according to the stylesheet.</p>
+
+<table class="table1">
+<tr>
+    <td><c:chess border="double">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess>
+    </td>
+</tr>
+</table>
+
+<!-- =========================================================================================================================== -->
+<h3>border = <code class="kw">round</code></h3>
+<!-- =========================================================================================================================== -->
+
+<p>(B&amp;W mode) Show a border with round corners around the chessboard. If not specified, default border style is solid.</p>
+<p>(Color mode) Show a border according to the stylesheet.</p>
+
+<table class="table1">
+<tr>
+    <td><c:chess border="round">.+.+./+...+/..n../+...+/.+.+.</c:chess>
+    </td>
+    <td><c:chess border="solid round">.+.+./+...+/..n../+...+/.+.+.</c:chess>
+    </td>
+    <td><c:chess border="double round">.+.+./+...+/..n../+...+/.+.+.</c:chess>
+    </td>
+</tr>
+</table>
+
+<!-- =========================================================================================================================== -->
+<h3>border = <code class="kw">square</code></h3>
+<!-- =========================================================================================================================== -->
+
+<p>(B&amp;W mode) Show a border with square corners around the chessboard. If not specified, default border style is solid.</p>
+<p>(Color mode) Show a border according to the stylesheet.</p>
+
+<table class="table1">
+<tr>
+    <td><c:chess border="square">.+.+./+...+/..n../+...+/.+.+.</c:chess>
+    </td>
+    <td><c:chess border="solid square">.+.+./+...+/..n../+...+/.+.+.</c:chess>
+    </td>
+    <td><c:chess border="double square">.+.+./+...+/..n../+...+/.+.+.</c:chess>
+    </td>
+</tr>
+</table>
+
+<!-- =========================================================================================================================== -->
+<h3>border = <var>origin</var></h3>
+<!-- =========================================================================================================================== -->
+
+<p>Specify the origin of the leftmost bottom square (eg. <code>a1</code>, <code>e5</code>, ...), and also show coordinates
+around the chessboard. In case where the position only shows a section of the complete chessboard, borders and coordinates
+for a given board side are shown only if outer squares for that side are visible as well.</p>
+
+<table class="table1">
+<tr>
+    <td rowspan="2"><c:chess border="a1">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess>
+    </td>
+    <td rowspan="2"><c:chess border="double a1">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess>
+    </td>
+    <td><c:chess border="solid a5">k.../..N./.KN./....</c:chess>
+    </td>
+    <td><c:chess border="double e5">...k/.N../.NK./....</c:chess>
+    </td>
+</tr>
+<tr>
+    <td><c:chess border="double a1">..../.KN./..N./k...</c:chess>
+    </td>
+    <td><c:chess border="solid e1">..../.NK./.N../...k</c:chess>
+    </td>
+</tr>
+</table>
+
+<!-- =========================================================================================================================== -->
+<h3>border = <code>[n][s][e][o]</code></h3>
+<!-- =========================================================================================================================== -->
+
+<p>Select which border must be shown. If board origin is specified, it controls visibility of board coordinates,
+but visibility of borders still depends on the visibility of outer squares.</p>
+
+<table class="table1">
+<tr>
+    <td rowspan="2"><c:chess border="nseo">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess>
+    </td>
+    <td><c:chess border="n">..k./..Q./..K./....</c:chess>
+    </td>
+    <td><c:chess border="s">..../..K./..Q./..k.</c:chess>
+    </td>
+    <td><c:chess border="o">..../kQK./..../....</c:chess>
+    </td>
+    <td><c:chess border="e">..../..../.KQk/....</c:chess>
+    </td>
+</tr>
+<tr>
+    <td><c:chess border="double n">..k./..Q./..K./....</c:chess>
+    </td>
+    <td><c:chess border="double s">..../..K./..Q./..k.</c:chess>
+    </td>
+    <td><c:chess border="double o">..../kQK./..../....</c:chess>
+    </td>
+    <td><c:chess border="double e">..../..../.KQk/....</c:chess>
+    </td>
+</tr>
+</table>
+
+<p><code class="kw">[n][s][e][o]</code> can override visibility of coordinates but cannot override visibility of borders as defined by the board origin.</p>
+
+<p><em>Without</em> specification of board origin:</p>
+
+<table class="table1" width="100%">
+<tr>
+    <td><c:chess border="n">++++/..../..../....</c:chess>
+    </td>
+    <td><c:chess border="s">..../..../..../++++</c:chess>
+    </td>
+    <td><c:chess border="o">+.../+.../+.../+...</c:chess>
+    </td>
+    <td><c:chess border="e">...+/...+/...+/...+</c:chess>
+    </td>
+    <td><c:chess border="nseo">..k./..Q./..K./....</c:chess>
+    </td>
+    <td><c:chess border="nseo">.+.+./+...+/..n../+...+/.+.+.</c:chess>
+    </td>
+</tr>
+<tr>
+    <td><c:chess border="double ns">xkx./xxxN/.K../..../..../..../..../R.R.</c:chess>
+    </td>
+    <td colspan="2"><c:chess border="double eo">+......./R+++++++/+.......</c:chess>
+    </td>
+    <td><c:chess border="double ne">...k/.N../.NK./....</c:chess>
+    </td>
+    <td><c:chess border="double so">..../.KN./..N./k...</c:chess>
+    </td>
+</tr>
+</table>
+
+<p><em>With</em> specification of board origin:</p>
+
+<table class="table1" width="100%">
+<tr>
+    <td><c:chess border="a1 n">++++/..../..../....</c:chess>
+    </td>
+    <td><c:chess border="a1 s">..../..../..../++++</c:chess>
+    </td>
+    <td><c:chess border="a1 o">+.../+.../+.../+...</c:chess>
+    </td>
+    <td><c:chess border="a1 e">...+/...+/...+/...+</c:chess>
+    </td>
+    <td><c:chess border="e5 nseo">..k./..Q./..K./....</c:chess>
+    </td>
+    <td><c:chess border="b2 nseo">.+.+./+...+/..n../+...+/.+.+.</c:chess>
+    </td>
+</tr>
+<tr>
+    <td><c:chess border="double a1 ns">xkx./xxxN/.K../..../..../..../..../R.R.</c:chess>
+    </td>
+    <td colspan="2"><c:chess border="double a1 eo">+......./R+++++++/+.......</c:chess>
+    </td>
+    <td><c:chess border="double a1 ne">...k/.N../.NK./....</c:chess>
+    </td>
+    <td><c:chess border="double a1 so">..../.KN./..N./k...</c:chess>
+    </td>
+</tr>
+</table>
+
+<p>Note that specifying board origin after border visibility overrides current border visibility settings (as in second example
+below).</p>
+
+<table class="table1" width="80%">
+<tr>
+    <td><c:chess border="double a1 ne">...k/.N../.NK./....</c:chess>
+    </td>
+    <td><pre>&lt;c:chess border="double <em>a1 ne</em>">...k/.N../.NK./....&lt;/c:chess></pre>
+    </td>
+</tr>
+<tr>
+    <td><c:chess border="double ne a1">...k/.N../.NK./....</c:chess>
+    </td>
+    <td><pre>&lt;c:chess border="double <em>ne a1</em>">...k/.N../.NK./....&lt;/c:chess></pre>
+    </td>
+</tr>
+</table>
+
+<!-- =========================================================================================================================== -->
+<h3>border = <code>pad</code></h3>
+<!-- =========================================================================================================================== -->
+
+<p>Use <code class="kw">pad</code> to force renderer to print blanks for side where coordinates are not shown. This way the chessboard
+is always surrounded by either a blank or a coordinate character, and hence it is easier to control alignment of the chessboard.</p>
+
+<p><em>Without</em> border = <code class="kw">pad</code></p>
+<table class="table1">
+<tr>
+    <td><c:chess border="ne a1">++xx/..../..../++xx</c:chess>
+    </td>
+<td><c:chess border="a1 ne">++xx/..../..../++xx</c:chess>
+    </td>
+</tr>
+</table>
+
+<p><em>With</em> border = <code class="kw">pad</code></p>
+<table class="table1">
+<tr>
+    <td><c:chess border="ne a1 pad">++xx/..../..../++xx</c:chess>
+    </td>
+    <td><c:chess border="a1 ne pad">++xx/..../..../++xx</c:chess>
+    </td>
+</tr>
+</table>
+
+
+<!-- =========================================================================================================================== -->
+<h2><code class="kw">mode</code> attribute</h2>
+<!-- =========================================================================================================================== -->
+
+<!-- =========================================================================================================================== -->
+<h3>mode = <code>color</code> / <code>bw</code></h3>
+<!-- =========================================================================================================================== -->
+
+<p>Use mode = <code>color</code> / <code>bw</code> while specifying a position to force the output mode (color / b&amp;w) of that position.
+Use mode = <code>color</code> / <code>bw</code> without specifying a position to set the default mode for all subsequent board
+positions.
+</p>
+
+<c:chess mode="color"></c:chess>
+
+<p>(Setting default mode to <em>color</em>) Here some boards using the default mode, except for the one in the middle for which usage of <em>bw</em> mode is forced.</p>
+
+<table class="table1">
+<tr>
+    <td><c:chess border="solid a5">k.../..N./.KN./....</c:chess>
+    </td>
+    <td rowspan="2"><c:chess border="a1" mode="bw">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess>
+    </td>
+    <td><c:chess border="double e5">...k/.N../.NK./....</c:chess>
+    </td>
+</tr>
+<tr>
+    <td><c:chess border="double a1">..../.KN./..N./k...</c:chess>
+    </td>
+    <td><c:chess border="solid e1">..../.NK./.N../...k</c:chess>
+    </td>
+</tr>
+</table>
+
+<c:chess mode="bw"></c:chess>
+
+<p>(Setting default mode to <em>bw</em>) Here some boards using the default mode, except for the one in the middle for which usage of <em>color</em> mode is forced.</p>
+
+<table class="table1">
+<tr>
+    <td><c:chess border="solid a5">k.../..N./.KN./....</c:chess>
+    </td>
+    <td rowspan="2"><c:chess border="a1" mode="color">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess>
+    </td>
+    <td><c:chess border="double e5">...k/.N../.NK./....</c:chess>
+    </td>
+</tr>
+<tr>
+    <td><c:chess border="double a1">..../.KN./..N./k...</c:chess>
+    </td>
+    <td><c:chess border="solid e1">..../.NK./.N../...k</c:chess>
+    </td>
+</tr>
+</table>
+
+<!-- =========================================================================================================================== -->
+<h2><code class="kw">cstyle</code> attribute</h2>
+<!-- =========================================================================================================================== -->
+
+<c:chess id="resumemode" mode="bw"></c:chess>
+
+<p>Use the <code class="kw">cstyle</code> attribute to pass inline style information to the board table element.</p>
+
+<table class="table1">
+<tr>
+    <td align="center"><c:chess border="e5" cstyle="font-size:32pt;">
+            +.../
+            R+++/
+            +.../
+            +...
+        </c:chess>
+    </td>
+    <td>&nbsp;&nbsp;
+    </td>
+    <td align="center"><c:chess border="e5" cstyle="background-color: #CCC;">
+            +.../
+            R+++/
+            +.../
+            +...
+        </c:chess>
+    </td>
+</tr>
+<tr>
+    <td align="center">To change locally the font size ...
+    </td>
+    <td></td>
+    <td align="center">... or to change board background color.
+    </td>
+</tr>
+</table>
+
+<!-- =========================================================================================================================== -->
+<h2><code class="kw">cclass</code> attribute</h2>
+<!-- =========================================================================================================================== -->
+
+<p>Use the <code class="kw">cclass</code> attribute to pass class style information to the board table element.</p>
+
+<table class="table1">
+<tr>
+    <td align="center"><c:chess border="a1" cclass="chess1">(+).../(R+++)/(+).../(+)...</c:chess>
+    </td>
+    <td>&nbsp;&nbsp;
+    </td>
+    <td align="center"><c:chess border="a1" cclass="chess2">(+).../(R+++)/(+).../(+)...</c:chess>
+    </td>
+</tr>
+<tr>
+    <td align="center">To make simple customizations...
+    </td>
+    <td></td>
+    <td align="center">... or more complex ones.
+    </td>
+</tr>
+</table>
+
+<!-- =========================================================================================================================== -->
+<h2>Changing style based on parent's class</h2>
+<!-- =========================================================================================================================== -->
+
+<table width="80%" align="center">
+    <tr>
+    <td align="center">
+        <table class="parent1">
+            <tr>
+            <td class="parent1">
+                <c:chess border="a1">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess></td>
+            </tr>
+            <tr>
+            <td style="text-align: center; font-size: 0.8em">Here is the starting position in a Wikipedia-like style.</td>
+            </tr>
+        </table>
+    </td>
+    <td align="center">
+        <table class="parent2">
+            <tr>
+            <td>
+                <c:chess border="solid">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</c:chess></td>
+            </tr>
+            <tr>
+            <td style="text-align: center; font-size: 0.8em; font-weight: bold;">Another starting position</td>
+            </tr>
+        </table>
+    </td>
+    </tr>
+</table>
+
+
+</div>  <!-- content -->
+
+<div id="footnote">
+
+<div style="float: left;">
+    <p><small>&copy; Copyright 2007 <script type="text/javascript">mailto("Michaël Peeters")</script> (<a href="http://mip.noekeon.org">http://mip.noekeon.org</a>).
+    </small></p>
+</div>
+<div>
+    <p style="float: right; text-align: right;"><small>
+    Last modified on <script type="text/javascript">document.write(document.lastModified)</script><br/>
+    </small></p>
+</div>
+<div style="clear:left; padding-top: 1ex;">
+    <a href="http://www.syronex.com/antispam/" target="_blank"><img align="middle" style="border:0pt" title="Antispam Solutions" alt="Anti-Spam" src="antispam/antispam.gif" width="117" height="23"/></a>
+</div>
+
+</div>  <!-- footnote -->
+
+</body>
+
+
+</html>
+
