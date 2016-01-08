@@ -1,7 +1,7 @@
 /*==============================================================================
  * Javascript renderer engine of the HTMLTTChess package
  *
- * Copyright (C) 2007  Michael Peeters
+ * Copyright (C) 2007-2016  Michael Peeters <https://github.com/xeyownt>
  *
  * LICENSE:
  * =======
@@ -22,14 +22,9 @@
  *
  * LINKS:
  * =====
- * Check page http://mip.noekeon.org/HTMLTTChess/ for updates
- * See file index.html for contact information
+ * Check page http://mip.noekeon.org/HTMLTTChess/ for updates.
+ * See file index.html for contact information.
  *
- * HISTORY:
- * =======
- * - Aug 13 2007 - v1.0
- *
- *   First version.
  *==============================================================================
  */
 
@@ -71,8 +66,8 @@ var MERIDA_FRAME_PADDING 			= MFB+MFB+MFB+MFB+MFB+MFB+MFB+MFB+MFB+MFB;
 var MERIDA_FRAME_COL_PADDING 		= MFB+MFB+MFB+MFB+MFB+MFB+MFB+MFB+MFB+MFB;
 var MERIDA_FRAME_ROW_PADDING 		= MFB+'<br/>'+MFB+'<br/>'+MFB+'<br/>'+MFB+'<br/>'+MFB+'<br/>'+MFB+'<br/>'+MFB+'<br/>'+MFB+'<br/>';
 
-var MERIDA_FRAME_COLS 				= '12345678';
-var MERIDA_FRAME_ROWS 				= 'abcdefgh';
+var MERIDA_FRAME_COLS 				= 'abcdefgh';
+var MERIDA_FRAME_ROWS 				= '12345678';
 
 var MERIDA_FRAME_D_BOTTOM 			= '\uE336\uE336\uE336\uE336\uE336\uE336\uE336\uE336';
 var MERIDA_FRAME_D_BOTTOM_COORD 	= '\uE348\uE349\uE34A\uE34B\uE34C\uE34D\uE34E\uE34F';

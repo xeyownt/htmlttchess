@@ -8,14 +8,13 @@ See file index.html for documentation.
 
 LICENSE:
 =======
-Copyright (C) 2007  Michael Peeters
+Copyright (C) 2007-2016  Michael Peeters <https://github.com/xeyownt>
 
-See file COPYING for license information
+See file COPYING for license information.
 
 LINKS:
 =====
-Check page http://mip.noekeon.org/HTMLTTChess/ for updates
-See file index.html for contact information
+Check page http://mip.noekeon.org/HTMLTTChess/ for updates.
 
 CONTENT OF THIS PACKAGE:
 =======================
@@ -43,7 +42,13 @@ xhtml1-transitional-chess.dtd	Custom DTD for the HTMLTTChess script
 HISTORY:
 =======
 
-August 13, 2007 - v1.0
+v1.1 - 2016/01/03
+
+    - Second release, using web fonts in case the client does not have the 
+      necessary font installed. For now the solution is very basic but it 
+      should work with most modern browsers.
+
+v1.0 - 2007/08/13
 
 	- First release.
 

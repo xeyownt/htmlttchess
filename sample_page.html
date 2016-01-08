@@ -9,7 +9,7 @@
  *
  * Documentation sample page of the HTMLTTChess package
  *
- * Copyright (C) 2007  Michael Peeters
+ * Copyright (C) 2007-2016  Michael Peeters <https://github.com/xeyownt>
  *
  * LICENSE:
  * =======
@@ -30,14 +30,7 @@
  *
  * LINKS:
  * =====
- * Check page http://mip.noekeon.org/HTMLTTChess/ for updates
- * See file index.html for contact information
- *
- * HISTORY:
- * =======
- * - Aug 13 2007 - v1.0
- *
- *   First version.
+ * Check page http://mip.noekeon.org/HTMLTTChess/ for updates.
  *
  *******************************************************************************
 -->
@@ -164,6 +157,13 @@
 <li><a href="sample_page.html">Sample page</a></li>
 <li><a href="template.html">Template page</a></li>
 </ul>
+<!-- REF_ONLY_BEGIN -->
+<h2>Download</h2>
+<ul>
+<li><a href="http://mip.noekeon.org/ccount/click.php?id=3">Chess Merida Unicode</a></li>
+<li><a href="http://mip.noekeon.org/ccount/click.php?id=4">HTMLTTChess v1.1</a></li>
+</ul>
+<!-- REF_ONLY_END -->
 <!-- Font detector script - part II - Put this part where you like the "DETECTED" message to appear on your page -->
 <script type="text/javascript"><!--
     if(ChessMeridaDetected) document.write('<p><small style="color:gray">The Chess Merida Unicode font has been detected on your computer. You should see this page properly (if not, see installation instructions <a href="install.html">here</a>).</small></p>')
@@ -179,7 +179,7 @@
 <!-- Font detector script - part III - Put this part where you like the "UNDETECTED" message to appear on your page -->
 <noscript><p style="text-align:center; font-size:1.2em"><em>You need to activate javascript to view this page properly!</em></p></noscript>
 <script type="text/javascript"><!--
-if(!ChessMeridaDetected) document.write('<p style="text-align:center; font-size:1.2em"><em>!!! Prior viewing this page, you must first install the Chess Merida Unicode font that comes with this package. See installation instructions <a href="install.html">here</a>.</em></p>');
+if(!ChessMeridaDetected) document.write('<p style="text-align:center; font-size:1.2em"><em>You do not have the Chess Merida Unicode font installed so this page will use web fonts instead. Installing the font on your device might increase rendering quality.  See installation instructions <a href="install.html">here</a>.</em></p>');
 // --></script>
 
 <!-- =========================================================================================================================== -->
@@ -632,7 +632,32 @@ positions.
 <div id="footnote">
 
 <div style="float: left;">
-    <p><small>&copy; Copyright 2007 <script type="text/javascript">mailto("Michaël Peeters")</script> (<a href="http://mip.noekeon.org">http://mip.noekeon.org</a>).
+    <p><small>&copy; Copyright 2007-2016 
+    <script type="text/javascript" language="javascript">
+    <!--
+    // Email obfuscator script 2.1 by Tim Williams, University of Arizona
+    // Random encryption key feature by Andrew Moulden, Site Engineering Ltd
+    // This code is freeware provided these four comment lines remain intact
+    // A wizard to generate this code is at http://www.jottings.com/obfuscator/
+    { coded = "gXT8XXKg9MM-nX-oS9O9So-4SX-Scd?MWei9KX=gXT8XXKg9MM"
+      key = "fgVwZiAbnpBCGhMvWjD8aT0RKPs3uz2lJmUOcXY4FEN7q9SkrtHdQ5yxLeo1I6"
+      shift=coded.length
+      link=""
+      for (i=0; i<coded.length; i++) {
+        if (key.indexOf(coded.charAt(i))==-1) {
+          ltr = coded.charAt(i)
+          link += (ltr)
+        }
+        else {     
+          ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+          link += (key.charAt(ltr))
+        }
+      }
+    document.write("<a href='mailto:"+link+"'>Michaël Peeters</a>")
+    }
+    //-->
+    </script><noscript><a href="mailto:please.enable.javascript@to.email.me?Subject=HTMLTTChess" target="_top">Michaël Peeters</a></noscript>
+    (<a href="http://mip.noekeon.org">http://mip.noekeon.org</a>).
     </small></p>
 </div>
 <div>
@@ -641,7 +666,24 @@ positions.
     </small></p>
 </div>
 <div style="clear:left; padding-top: 1ex;">
-    <a href="http://www.syronex.com/antispam/" target="_blank"><img align="middle" style="border:0pt" title="Antispam Solutions" alt="Anti-Spam" src="antispam/antispam.gif" width="117" height="23"/></a>
+    <!-- REF_ONLY_BEGIN -->
+	<div style="float:left; padding-right:3px;">
+	<!-- Start of StatCounter Code -->
+	<script type="text/javascript">
+	var sc_project=2836757;
+	var sc_invisible=0;
+	var sc_partition=28;
+	var sc_security="89464283";
+	</script>
+
+	<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c29.statcounter.com/2836757/0/89464283/0/" alt="hit counter" /></a></div></noscript>
+	<!-- End of StatCounter Code -->
+	</div>
+    <a href="http://www.phpjunkyard.com"><img align="middle" src="/images/88x31.gif" height="31" width="88" border="0" alt="Free PHP scripts for download" /></a>
+    <a href="http://www.w3schools.com/"><img align="middle" src="/images/w3schools.gif" border="0" height="30" width="100" alt="Visit W3Schools" /></a>
+    <a href="http://validator.w3.org/check?uri=referer"><img align="middle" src="/images/vxhtml.gif" alt="Valid XHTML 1.0 Transitional Chess" height="31" width="88" border="0" /></a>
+    <a href="http://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank"><img align="middle" src="/images/vcss.gif" alt="Validate" border="0" /></a>
+    <!-- REF_ONLY_END -->
 </div>
 
 </div>  <!-- footnote -->
