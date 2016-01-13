@@ -153,7 +153,7 @@ body {
 #content table.keymap td {
 	border: #CC0057 1px solid;
 	border-left: none;
-	font-family: "Courier New", monospace;
+	font-family: monospace;
 	color: blue;
 	padding: 2px 10px 2px 5px;
 	text-align: center;
@@ -166,7 +166,8 @@ body {
 }
 
 #content code {
-	font-family: "Courier New", monospace;
+	font-family: monospace;
+	background-color: #EEE;
 	font-size: 1em;
 }
 
