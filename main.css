@@ -23,6 +23,11 @@
  *==============================================================================
  */
 
+@font-face {
+    font-family: 'Chess Merida Unicode';
+    src: url(chess_merida_unicode.ttf);
+}
+
 #leftpane {
     clear: left;
     float: left;

@@ -37,6 +37,10 @@ xhtml1-transitional-chess.dtd	Custom DTD for validating HTML page with the
 HISTORY:
 =======
 
+v1.13 - 2016/01/17
+
+- Add @font-face in main.css (for chess_merida_unicode.html).
+
 v1.12 - 2016/01/12
 
 - Minor editorial improvements to prepare publication on GitHub.
