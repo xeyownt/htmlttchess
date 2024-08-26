@@ -5,7 +5,7 @@ that facilitates rendering of chessboards in HTML without the need of extra
 images.
 
 ## USAGE
-See file [index.html](index.html) for documentation.
+See file [reference.html](reference.html) or the homepage below for documentation.
 
 ## LICENSE
 Copyright (C) 2007-2016  Michael Peeters <https://github.com/xeyownt>
