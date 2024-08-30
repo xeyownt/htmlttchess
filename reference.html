@@ -209,8 +209,9 @@ The possible values for each attribute and their effects are given further on th
 <p>To render a specific chessboard position within an html page, you simply have to write it in
 <a href="http://en.wikipedia.org/wiki/Forsyth-Edwards_Notation">FEN</a> notation, and enclose the result in a
 <code class="kw">&lt;c:chess></code> tag.</p>
-<p>In this case however, you must not specify the complete FEN, but only the first part corresponding to the position of pieces on
-the board. For instance, the FEN of the starting position is given by</p>
+<p>In this case however, you do not have to specify the complete FEN, but only the first part corresponding to the position of pieces on
+the board (the extra fields can be given but are ignored by the parser as long as they match the FEN specification).
+For instance, the FEN of the starting position is given by</p>
 
 <pre>rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1</pre>
 
