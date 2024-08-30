@@ -39,6 +39,10 @@ See file COPYING for more details.
 
 ## HISTORY
 
+v1.14 - 2024/08/30
+
+- Accept (but ignore) extra FEN fields.
+
 v1.13 - 2016/01/17
 
 - Add @font-face in main.css (for chess_merida_unicode.html).
