@@ -23,6 +23,8 @@
  *==============================================================================
  */
 
+// const customLog = require('./logger');
+
 var XMLNS = 'c:';
 
 var ATTR_BORDER = 'border'; //"solid", "double", "square", "round", "pad", origin, nseo
@@ -133,9 +135,23 @@ function ChessBoard(_fenCode, _attrBorder, _colorMode, _attrStyle, _attrClass) {
         return true;
     }
 
+    // Extract the board field from an (extended) FEN line
+    function extractBoardFromFEN(fen) {
+        // 2nd field match the FEN extra fields (eg 'b KQkq e3 0 1')
+        const boardMatch = fen.match(/(.*)([bwBW]\s+[KQkq-]+\s+[a-h1-8-]+\s+[0-9]+\s+[0-9]+\s*)/);
+
+        if (boardMatch) {
+            return boardMatch[1].trim();
+        } else {
+            return fen;
+        }
+    }
+
     this.parseFen = function () {
         //Remove white space
+        this.fenCode = extractBoardFromFEN(this.fenCode);
         this.fenCode = this.fenCode.replace(/[\r\n\t ]/g, '');
+        // customLog('FEN Code:', this.fenCode);
 
         //Replace 1,2...8 by multiple occurence of '.' (empty cells)
         this.fenCode = this.fenCode.replace(/1/g, '.');
@@ -158,11 +174,7 @@ function ChessBoard(_fenCode, _attrBorder, _colorMode, _attrStyle, _attrClass) {
             checkOk = checkOk && flatFenCode[row].length == this.colCount;
         }
 
-        if (!checkOk) {
-            return false;
-        }
-
-        return true;
+        return checkOk;
     };
 
     this.parseattrBorder = function () {
@@ -619,3 +631,7 @@ function parseChess() {
         chessElt[idx].fenCode = boardFenCode;
     }
 }
+
+module.exports = {
+    ChessBoard: ChessBoard,
+};
